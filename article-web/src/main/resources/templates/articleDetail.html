@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layouts/default">
+<head>
+	<title>View Article</title>
+</head>
+<body>
+	<div class="ui container" layout:fragment="content">
+		<div th:object="${article}">
+			<img th:src="*{thumbnail}" style="width: 300px; height: 300px;"/>
+			<p th:inline="text">ID: [[*{id}]]</p>
+			<p th:inline="text">Title: [[*{title}]]</p>
+			<p th:inline="text">Description: [[*{description}]]</p>
+		</div>
+	</div>
+</body>
+</html>
